@@ -72,7 +72,7 @@ function detect() {
 function applyDetection(platform) {
   if (!platform) return;
 
-  const card = $(`.dl[data-platform="${platform}"]`);
+  const card = $(`.card[data-platform="${platform}"]`);
   if (!card) return;
 
   card.classList.add('is-detected');
@@ -112,7 +112,7 @@ function applyRelease(release) {
     const asset = assets.find(a => re.test(a.name));
     if (!asset) continue;
 
-    const card = $(`.dl[data-platform="${platform}"]`);
+    const card = $(`.card[data-platform="${platform}"]`);
     if (!card) continue;
 
     const link = $('[data-role="link"]', card);
