@@ -7,10 +7,27 @@ Static HTML/CSS/JS with no build step — GitHub Pages serves this repo root
 directly, so a push to `main` is the deploy.
 
 ```
-index.html    markup + fallback download links
-styles.css    all styling
-app.js        platform detection + live release lookup
+index.html        markup + fallback download links
+styles.css        all styling
+app.js            platform detection, live release lookup, video facade
+media/poster.jpg  video still + og:image
 ```
+
+## The demo video
+
+Embedded from YouTube (`nlgZt3hlPxM`), not committed here — a 9.5 MB mp4 in
+the repo would be permanent history weight and would bill every play against
+the Pages bandwidth budget.
+
+It loads as a **facade**: the page shows `media/poster.jpg` and only builds the
+iframe when someone clicks, against `youtube-nocookie.com`. A plain embed would
+pull roughly a megabyte of YouTube script and set tracking cookies on every
+visit whether or not anyone watches. The still is self-hosted rather than
+hotlinked to `i.ytimg.com` so that no third party is contacted until the
+visitor asks for the video.
+
+To swap the video, change `data-video` on `.ytlite` in `index.html` and replace
+`media/poster.jpg`.
 
 ## How downloads stay current
 

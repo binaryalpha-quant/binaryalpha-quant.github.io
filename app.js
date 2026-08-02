@@ -127,8 +127,34 @@ function applyRelease(release) {
   });
 }
 
+/* ── video facade ──────────────────────────────────────────────── */
+
+/* Swap the still for a real player only once someone asks. Uses the
+   -nocookie host so YouTube can't set tracking cookies, and autoplays
+   because the click *is* the play intent. */
+function initVideoFacade() {
+  const box = $('.ytlite');
+  if (!box) return;
+
+  const btn = $('.ytlite__btn', box);
+  const id = box.dataset.video;
+  if (!btn || !id) return;
+
+  btn.addEventListener('click', () => {
+    const frame = document.createElement('iframe');
+    frame.src = `https://www.youtube-nocookie.com/embed/${encodeURIComponent(id)}?autoplay=1&rel=0&modestbranding=1`;
+    frame.title = 'Binary Alpha Trader — demo';
+    frame.allow = 'accelerometer; autoplay; encrypted-media; picture-in-picture; web-share';
+    frame.referrerPolicy = 'strict-origin-when-cross-origin';
+    frame.allowFullscreen = true;
+    box.replaceChildren(frame);
+    frame.focus();
+  }, { once: true });
+}
+
 /* ── boot ──────────────────────────────────────────────────────── */
 
+initVideoFacade();
 applyDetection(detect());
 
 /* `/releases/latest` is deliberately not used: it 404s while the newest
