@@ -185,21 +185,6 @@
       </dl>
     </li>
 
-    <li class="card" data-platform="linux-appimage">
-      <div class="card__os">Linux</div>
-      <h3 class="card__name">Portable</h3>
-      <a class="card__link" data-role="link"
-         href="https://github.com/binaryalpha-quant/binaryalpha-quant-binary-alpha-releases/releases/download/v3.3.0/BinaryAlphaTrader-3.3.0.AppImage">
-        Download AppImage
-        <span class="card__arrow" aria-hidden="true">→</span>
-      </a>
-      <dl class="card__spec">
-        <div><dt>Format</dt><dd>.AppImage</dd></div>
-        <div><dt>Arch</dt><dd>x64</dd></div>
-        <div><dt>Size</dt><dd data-role="size">134.1 MB</dd></div>
-      </dl>
-    </li>
-
     <li class="card" data-platform="linux-deb">
       <div class="card__os">Linux</div>
       <h3 class="card__name">Debian / Ubuntu</h3>
@@ -212,6 +197,22 @@
         <div><dt>Format</dt><dd>.deb</dd></div>
         <div><dt>Arch</dt><dd>x64</dd></div>
         <div><dt>Size</dt><dd data-role="size">94.7 MB</dd></div>
+      </dl>
+    </li>
+
+    <li class="card" data-platform="linux-appimage">
+      <div class="card__os">Linux</div>
+      <h3 class="card__name">Portable</h3>
+      <a class="card__link" data-role="link"
+         href="https://github.com/binaryalpha-quant/binaryalpha-quant-binary-alpha-releases/releases/download/v3.3.0/BinaryAlphaTrader-3.3.0.AppImage">
+        Download AppImage
+        <span class="card__arrow" aria-hidden="true">→</span>
+      </a>
+      <dl class="card__spec">
+        <div><dt>Format</dt><dd>.AppImage</dd></div>
+        <div><dt>Arch</dt><dd>x64</dd></div>
+        <div><dt>Needs</dt><dd>FUSE&nbsp;2</dd></div>
+        <div><dt>Size</dt><dd data-role="size">134.1 MB</dd></div>
       </dl>
     </li>
 
@@ -255,11 +256,17 @@
     <article class="step">
       <span class="step__num">03</span>
       <h3>Linux</h3>
-      <p>Mark the AppImage executable, or install the package:</p>
-<pre><code>chmod +x BinaryAlphaTrader-*.AppImage
-./BinaryAlphaTrader-*.AppImage
-
-sudo apt install ./BinaryAlphaTrader-*.deb</code></pre>
+      <p>On Debian or Ubuntu the package handles its own dependencies:</p>
+<pre><code>sudo apt install ./BinaryAlphaTrader-*.deb</code></pre>
+      <p>The AppImage runs anywhere but needs FUSE 2, which Ubuntu no longer
+         installs by default (the package is <code>libfuse2</code> before
+         24.04):</p>
+<pre><code>sudo apt install libfuse2t64
+chmod +x BinaryAlphaTrader-*.AppImage
+./BinaryAlphaTrader-*.AppImage</code></pre>
+      <p>Or skip the dependency entirely — this unpacks and runs it with no
+         system packages at all:</p>
+<pre><code>./BinaryAlphaTrader-*.AppImage --appimage-extract-and-run</code></pre>
     </article>
   </div>
 

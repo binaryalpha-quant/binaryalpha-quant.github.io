@@ -63,7 +63,13 @@ function detect() {
   if (/iphone|ipad|ipod/i.test(hay)) return null;
   if (/win/i.test(hay)) return 'windows';
   if (/mac/i.test(hay)) return macFlavour();
-  if (/linux|x11|ubuntu/i.test(hay)) return 'linux-appimage';
+  /* The .deb resolves its own dependencies; the AppImage needs FUSE 2, which
+     Ubuntu hasn't installed by default since 22.04. Prefer the package when
+     the UA names a Debian derivative — only some browsers say so — and fall
+     back to the AppImage, which at least runs on any distro. */
+  if (/linux|x11/i.test(hay)) {
+    return /ubuntu|debian/i.test(hay) ? 'linux-deb' : 'linux-appimage';
+  }
   return null;
 }
 
