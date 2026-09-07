@@ -20,77 +20,119 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=IBM+Plex+Mono:wght@300;400;500;600&display=swap" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Press+Start+2P&display=swap" rel="stylesheet" />
 <link rel="stylesheet" href="styles.css" />
-<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' fill='%230a0a0b'/><path d='M8 22V10h7a3.2 3.2 0 010 6.4H8m0 0h7.6a3.2 3.2 0 010 6.4H8' fill='none' stroke='%23ffb02e' stroke-width='2.2'/></svg>" />
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%230A0A0F'/><defs><linearGradient id='g' x1='0' y1='0' x2='1' y2='1'><stop stop-color='%236366F1'/><stop offset='.5' stop-color='%23A855F7'/><stop offset='1' stop-color='%23EC4899'/></linearGradient></defs><path d='M8 22V10h7a3.2 3.2 0 010 6.4H8m0 0h7.6a3.2 3.2 0 010 6.4H8' fill='none' stroke='url(%23g)' stroke-width='2.2'/></svg>" />
 </head>
 <body>
 
-<div class="grain" aria-hidden="true"></div>
-<div class="glow" aria-hidden="true"></div>
+<div class="bg-wash" aria-hidden="true"></div>
 
-<!-- ── status strip ─────────────────────────────────────────────── -->
-<header class="statusbar">
-  <div class="wrap statusbar__inner">
-    <span class="statusbar__mark">
-      <span class="dot" aria-hidden="true"></span>
-      BINARY&nbsp;ALPHA
-    </span>
-    <div class="statusbar__right">
-      <span class="statusbar__meta" id="statusMeta">
+<!-- ── app chrome topbar ────────────────────────────────────────── -->
+<header class="topbar">
+  <div class="wrap topbar__inner">
+    <a class="topbar__brand" href="#top" aria-label="Binary Alpha home">
+      <span class="brand-dot" aria-hidden="true"></span>
+      Binary&nbsp;Alpha
+      <span class="pixel-tag">Krypt</span>
+    </a>
+    <div class="topbar__right">
+      <span class="topbar__meta" id="statusMeta">
         <span data-field="version">v3.3.0</span>
         <span class="sep" aria-hidden="true">/</span>
         <span data-field="date">—</span>
         <span class="sep" aria-hidden="true">/</span>
         <span data-field="platforms">5 builds</span>
       </span>
-      <nav class="statusbar__ctas" aria-label="Quick links">
-        <a class="statusbar__cta" href="https://discord.gg/fN6hCxgEuK" rel="noopener"
+      <nav class="topbar__ctas" aria-label="Quick links">
+        <a class="topbar__link" href="https://discord.gg/fN6hCxgEuK" rel="noopener"
            data-ba-event="discord_click" data-ba-location="nav">Discord</a>
-        <a class="statusbar__cta statusbar__cta--signal" href="#downloads"
+        <a class="topbar__link topbar__link--signal" href="#downloads"
            data-ba-event="download_click" data-ba-platform="nav_download">Download</a>
       </nav>
     </div>
   </div>
 </header>
 
-<main>
+<main id="top">
 
 <!-- ── hero ─────────────────────────────────────────────────────── -->
 <section class="hero wrap">
-  <p class="eyebrow rise" style="--d:0ms">Kalshi&nbsp;auto-trading&nbsp;·&nbsp;memecoin&nbsp;Discover</p>
+  <div class="hero__shell">
+    <div class="hero__copy">
+      <p class="eyebrow rise" style="--d:0ms">
+        <span class="eyebrow__pip" aria-hidden="true"></span>
+        Desktop shell · Kalshi engine
+      </p>
 
-  <h1 class="hero__title rise" style="--d:60ms">
-    Binary&nbsp;Alpha<br /><em>Trader</em>
-  </h1>
+      <h1 class="hero__title rise" style="--d:60ms">
+        Binary Alpha
+        <span>Trader</span>
+      </h1>
 
-  <p class="hero__lede rise" style="--d:120ms">
-    Whale tracker, momentum scanner and a Kalshi trading engine in one
-    desktop app — plus <strong>Discover</strong>, free memecoin market data
-    from DexScreener, GeckoTerminal and pump.fun with a research recorder.
-    Your API keys and every trade stay on your machine.
-  </p>
+      <p class="hero__lede rise" style="--d:120ms">
+        Whale tracker, momentum scanner, and a Kalshi trading engine in one
+        desktop app — plus <strong>Discover</strong>, free memecoin market data
+        from DexScreener, GeckoTerminal and pump.fun with a research recorder.
+        Your API keys and every trade stay on your machine.
+      </p>
 
-  <div class="hero__actions rise" style="--d:180ms">
-    <a class="btn btn--primary" id="primaryDownload"
-       href="https://github.com/binaryalpha-quant/binaryalpha-quant-binary-alpha-releases/releases/download/v3.3.0/Binary.Alpha.Trader-Setup-3.3.0.exe"
-       data-ba-event="download_click" data-ba-platform="hero_download">
-      <span class="btn__label">Download<span id="primaryOs"></span></span>
-      <span class="btn__meta" id="primarySize">92.5&nbsp;MB</span>
-    </a>
-    <a class="btn btn--discord" href="https://discord.gg/fN6hCxgEuK" rel="noopener"
-       data-ba-event="discord_click" data-ba-location="hero">
-      <span class="btn__label">Join Discord</span>
-    </a>
-    <a class="btn btn--ghost" href="#downloads">All platforms ↓</a>
+      <div class="hero__actions rise" style="--d:180ms">
+        <a class="btn btn--primary" id="primaryDownload"
+           href="https://github.com/binaryalpha-quant/binaryalpha-quant-binary-alpha-releases/releases/download/v3.3.0/Binary.Alpha.Trader-Setup-3.3.0.exe"
+           data-ba-event="download_click" data-ba-platform="hero_download">
+          <span class="btn__label">Download<span id="primaryOs"></span></span>
+          <span class="btn__meta" id="primarySize">92.5&nbsp;MB</span>
+        </a>
+        <a class="btn btn--discord" href="https://discord.gg/fN6hCxgEuK" rel="noopener"
+           data-ba-event="discord_click" data-ba-location="hero">
+          <span class="btn__label">Join Discord</span>
+        </a>
+        <a class="btn btn--ghost" href="#downloads">All platforms ↓</a>
+      </div>
+
+      <ul class="specs rise" style="--d:240ms">
+        <li><dl><dt>Trade</dt><dd>Kalshi</dd></dl></li>
+        <li><dl><dt>Discover</dt><dd>Memecoin data</dd></dl></li>
+        <li><dl><dt>Keys</dt><dd>Local only</dd></dl></li>
+        <li><dl><dt>Default</dt><dd>Demo&nbsp;+&nbsp;dry-run</dd></dl></li>
+      </ul>
+    </div>
+
+    <aside class="hero__panel rise" style="--d:200ms" aria-label="App preview">
+      <div class="panel__chrome">
+        <div class="panel__dots" aria-hidden="true"><span></span><span></span><span></span></div>
+        <span class="panel__title">binary-alpha · engine</span>
+      </div>
+      <div class="panel__body">
+        <div class="stat-row">
+          <div class="stat">
+            <p class="stat__label">Mode</p>
+            <p class="stat__value stat__value--safe">Demo + dry-run</p>
+          </div>
+          <div class="stat">
+            <p class="stat__label">Venue</p>
+            <p class="stat__value">Kalshi</p>
+          </div>
+        </div>
+        <div class="stat-row">
+          <div class="stat">
+            <p class="stat__label">Keys</p>
+            <p class="stat__value">Local machine</p>
+          </div>
+          <div class="stat">
+            <p class="stat__label">Discover</p>
+            <p class="stat__value stat__value--live">Research layer</p>
+          </div>
+        </div>
+        <div class="panel__feed" aria-hidden="true">
+          <div><span class="ok">●</span> <strong>engine</strong> idle — dry-run armed</div>
+          <div><span class="dim">›</span> whale tracker · momentum scanner ready</div>
+          <div><span class="dim">›</span> discover feeds: dexscreener · gecko · pump.fun</div>
+        </div>
+      </div>
+    </aside>
   </div>
-
-  <dl class="specs rise" style="--d:240ms">
-    <div><dt>Trade</dt><dd>Kalshi</dd></div>
-    <div><dt>Discover</dt><dd>Memecoin data</dd></div>
-    <div><dt>Keys</dt><dd>Local only</dd></div>
-    <div><dt>Default</dt><dd>Demo&nbsp;+&nbsp;dry-run</dd></div>
-  </dl>
 </section>
 
 <!-- ── risk notice ──────────────────────────────────────────────── -->
@@ -109,10 +151,48 @@
   </aside>
 </section>
 
+<!-- ── engine / product ─────────────────────────────────────────── -->
+<section class="wrap section" id="engine">
+  <div class="section__head">
+    <div>
+      <p class="section__label">Kalshi auto-trading</p>
+      <h2 class="section__title">Whole-app trading shell</h2>
+    </div>
+    <span class="section__note">Local · offline license</span>
+  </div>
+
+  <p class="lede">
+    Binary Alpha is a desktop terminal for Kalshi: configure the engine,
+    watch flow, and keep keys on your machine. Safety rails ship on —
+    demo environment and dry-run until you deliberately go live.
+  </p>
+
+  <ul class="rules">
+    <li>
+      <span class="rules__k">Whale tracker</span>
+      <span class="rules__v">Surface large-flow activity so you can see where
+      size is leaning before the engine acts.</span>
+    </li>
+    <li>
+      <span class="rules__k">Momentum scanner</span>
+      <span class="rules__v">Scan short-horizon moves across the markets you
+      care about — same shell as the trading engine.</span>
+    </li>
+    <li>
+      <span class="rules__k">Configurable engine</span>
+      <span class="rules__v">Tune limits, hours, and switches from the
+      desktop UI. Your API keys never leave the machine.</span>
+    </li>
+  </ul>
+</section>
+
 <!-- ── discover ─────────────────────────────────────────────────── -->
 <section class="wrap section" id="discover">
   <div class="section__head">
-    <h2 class="section__title">Discover</h2>
+    <div>
+      <p class="section__label">Research layer</p>
+      <h2 class="section__title">Discover</h2>
+    </div>
     <span class="section__note">Free market data</span>
   </div>
 
@@ -149,7 +229,10 @@
 <!-- ── demo ─────────────────────────────────────────────────────── -->
 <section class="wrap section" id="demo">
   <div class="section__head">
-    <h2 class="section__title">See it running</h2>
+    <div>
+      <p class="section__label">Walkthrough</p>
+      <h2 class="section__title">See it running</h2>
+    </div>
     <span class="section__note">55 seconds</span>
   </div>
 
@@ -195,7 +278,10 @@
 <!-- ── downloads ────────────────────────────────────────────────── -->
 <section class="wrap section" id="downloads">
   <div class="section__head">
-    <h2 class="section__title">Downloads</h2>
+    <div>
+      <p class="section__label">Installers</p>
+      <h2 class="section__title">Downloads</h2>
+    </div>
     <span class="section__note" id="releaseTag">v3.3.0</span>
   </div>
 
@@ -295,7 +381,10 @@
 <!-- ── first launch ─────────────────────────────────────────────── -->
 <section class="wrap section">
   <div class="section__head">
-    <h2 class="section__title">First launch</h2>
+    <div>
+      <p class="section__label">Setup</p>
+      <h2 class="section__title">First launch</h2>
+    </div>
     <span class="section__note">Expect a warning</span>
   </div>
 
@@ -352,7 +441,10 @@ chmod +x BinaryAlphaTrader-*.AppImage
 <!-- ── requirements ─────────────────────────────────────────────── -->
 <section class="wrap section">
   <div class="section__head">
-    <h2 class="section__title">What you need</h2>
+    <div>
+      <p class="section__label">Prerequisites</p>
+      <h2 class="section__title">What you need</h2>
+    </div>
   </div>
 
   <div class="cols">
@@ -387,7 +479,10 @@ chmod +x BinaryAlphaTrader-*.AppImage
 <!-- ── safety ───────────────────────────────────────────────────── -->
 <section class="wrap section">
   <div class="section__head">
-    <h2 class="section__title">Safe by default</h2>
+    <div>
+      <p class="section__label">Defaults</p>
+      <h2 class="section__title">Safe by default</h2>
+    </div>
   </div>
 
   <ul class="rules">
@@ -417,6 +512,7 @@ chmod +x BinaryAlphaTrader-*.AppImage
   <div class="wrap footer__inner">
     <div class="footer__brand">
       <span class="footer__mark">Binary Alpha</span>
+      <span class="footer__pixel">Krypt</span>
       <p class="footer__fine">
         Trading carries real financial risk. The bundled strategies are
         heuristics with no proven, fee-adjusted edge and may lose money.
