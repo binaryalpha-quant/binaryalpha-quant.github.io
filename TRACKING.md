@@ -3,6 +3,18 @@
 Static click + UTM instrumentation for
 <https://binaryalpha-quant.github.io/>. No build step. No Meta/TikTok pixels.
 
+## Scope (github.io only)
+
+- This repo is the download marketing site. Do **not** change Kalshi / product
+  app code from here.
+- **Discord invite (canonical):** <https://discord.gg/fN6hCxgEuK> — keep this
+  URL; do not invent a new invite.
+- **Installer URLs:** never invent paths. Fallback links in `index.html` and
+  live rewrites in `app.js` both point at the releases repo
+  [binaryalpha-quant-binary-alpha-releases](https://github.com/binaryalpha-quant/binaryalpha-quant-binary-alpha-releases)
+  (static hrefs + GitHub Releases API). Tracking only adds `data-ba-*`
+  attributes; it does not replace download destinations.
+
 ## Setup: GA4 measurement ID
 
 Pick one (do **not** commit secrets; a measurement ID like `G-XXXXXXXX` is fine
