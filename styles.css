@@ -464,6 +464,7 @@ main, .topbar, .footer { position: relative; z-index: 1; }
   transition: border-color 0.18s ease;
 }
 .specs li:hover { border-color: var(--krypt-border-hi); }
+.specs dl { margin: 0; }
 .specs dt {
   font-size: 10px;
   letter-spacing: 0.16em;
