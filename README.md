@@ -1,7 +1,13 @@
 # binaryalpha-quant.github.io
 
-Download page for **Binary Alpha Trader**, served at
+Public site for **Binary Alpha Trader**, served at
 <https://binaryalpha-quant.github.io/>.
+
+Covers Kalshi auto-trading downloads plus memecoin **Discover** (free market
+data from DexScreener, GeckoTerminal, pump.fun, and a research recorder —
+not live memecoin execution). Discord:
+<https://discord.gg/fN6hCxgEuK>. YouTube:
+<https://www.youtube.com/@BinaryAlpha-h8w>.
 
 Static HTML/CSS/JS with no build step — GitHub Pages serves this repo root
 directly, so a push to `main` is the deploy.

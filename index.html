@@ -3,11 +3,11 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Binary Alpha Trader — Kalshi auto-trading desktop app</title>
-<meta name="description" content="Whale tracker, momentum scanner and a configurable trading engine for Kalshi prediction markets. Desktop app for Windows, macOS and Linux. Your API keys never leave your machine." />
+<title>Binary Alpha Trader — Kalshi auto-trading + memecoin Discover</title>
+<meta name="description" content="Kalshi auto-trading desktop app with memecoin Discover: free market data from DexScreener, GeckoTerminal, and pump.fun, plus a research recorder. Whale tracker, momentum scanner, configurable engine. Your API keys never leave your machine." />
 
 <meta property="og:title" content="Binary Alpha Trader" />
-<meta property="og:description" content="Kalshi auto-trading desktop app. Whale tracker, momentum scanner, configurable trading engine. Your API keys never leave your machine." />
+<meta property="og:description" content="Kalshi auto-trading plus memecoin Discover market data. DexScreener, GeckoTerminal, pump.fun, research recorder. Your API keys never leave your machine." />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://binaryalpha-quant.github.io/" />
 <meta property="og:image" content="https://binaryalpha-quant.github.io/media/poster.jpg" />
@@ -32,13 +32,19 @@
       <span class="dot" aria-hidden="true"></span>
       BINARY&nbsp;ALPHA
     </span>
-    <span class="statusbar__meta" id="statusMeta">
-      <span data-field="version">v3.3.0</span>
-      <span class="sep" aria-hidden="true">/</span>
-      <span data-field="date">—</span>
-      <span class="sep" aria-hidden="true">/</span>
-      <span data-field="platforms">5 builds</span>
-    </span>
+    <div class="statusbar__right">
+      <span class="statusbar__meta" id="statusMeta">
+        <span data-field="version">v3.3.0</span>
+        <span class="sep" aria-hidden="true">/</span>
+        <span data-field="date">—</span>
+        <span class="sep" aria-hidden="true">/</span>
+        <span data-field="platforms">5 builds</span>
+      </span>
+      <nav class="statusbar__ctas" aria-label="Quick links">
+        <a class="statusbar__cta" href="https://discord.gg/fN6hCxgEuK" rel="noopener">Discord</a>
+        <a class="statusbar__cta statusbar__cta--signal" href="#downloads">Download</a>
+      </nav>
+    </div>
   </div>
 </header>
 
@@ -46,16 +52,17 @@
 
 <!-- ── hero ─────────────────────────────────────────────────────── -->
 <section class="hero wrap">
-  <p class="eyebrow rise" style="--d:0ms">Kalshi&nbsp;·&nbsp;auto-trading terminal</p>
+  <p class="eyebrow rise" style="--d:0ms">Kalshi&nbsp;auto-trading&nbsp;·&nbsp;memecoin&nbsp;Discover</p>
 
   <h1 class="hero__title rise" style="--d:60ms">
     Binary&nbsp;Alpha<br /><em>Trader</em>
   </h1>
 
   <p class="hero__lede rise" style="--d:120ms">
-    Whale tracker, momentum scanner and a configurable trading engine in one
-    desktop app. Your API keys and every trade stay in a local database on
-    your machine.
+    Whale tracker, momentum scanner and a Kalshi trading engine in one
+    desktop app — plus <strong>Discover</strong>, free memecoin market data
+    from DexScreener, GeckoTerminal and pump.fun with a research recorder.
+    Your API keys and every trade stay on your machine.
   </p>
 
   <div class="hero__actions rise" style="--d:180ms">
@@ -64,11 +71,15 @@
       <span class="btn__label">Download<span id="primaryOs"></span></span>
       <span class="btn__meta" id="primarySize">92.5&nbsp;MB</span>
     </a>
+    <a class="btn btn--discord" href="https://discord.gg/fN6hCxgEuK" rel="noopener">
+      <span class="btn__label">Join Discord</span>
+    </a>
     <a class="btn btn--ghost" href="#downloads">All platforms ↓</a>
   </div>
 
   <dl class="specs rise" style="--d:240ms">
-    <div><dt>Markets</dt><dd>Kalshi</dd></div>
+    <div><dt>Trade</dt><dd>Kalshi</dd></div>
+    <div><dt>Discover</dt><dd>Memecoin data</dd></div>
     <div><dt>Keys</dt><dd>Local only</dd></div>
     <div><dt>Default</dt><dd>Demo&nbsp;+&nbsp;dry-run</dd></div>
   </dl>
@@ -84,9 +95,47 @@
       heuristics with <strong>no proven, fee-adjusted edge</strong> and may
       lose money. This is <strong>not financial advice</strong>. The app ships
       on Kalshi's demo environment with dry-run on, so nothing trades for real
-      until you turn both off.
+      until you turn both off. Discover is market data and research tooling —
+      not live memecoin order execution.
     </p>
   </aside>
+</section>
+
+<!-- ── discover ─────────────────────────────────────────────────── -->
+<section class="wrap section" id="discover">
+  <div class="section__head">
+    <h2 class="section__title">Discover</h2>
+    <span class="section__note">Free market data</span>
+  </div>
+
+  <p class="lede">
+    Scan memecoin momentum without leaving the terminal. Discover pulls
+    public market data so you can research names, watch flow, and keep a
+    local record — separate from Kalshi auto-trading.
+  </p>
+
+  <ul class="rules">
+    <li>
+      <span class="rules__k">DexScreener</span>
+      <span class="rules__v">Pair and liquidity snapshots for tokens you are
+      watching across supported DEXes.</span>
+    </li>
+    <li>
+      <span class="rules__k">GeckoTerminal</span>
+      <span class="rules__v">Cross-chain pool context to compare venues and
+      spot where activity is concentrating.</span>
+    </li>
+    <li>
+      <span class="rules__k">pump.fun</span>
+      <span class="rules__v">Early-curve listings and momentum signals from
+      the pump.fun feed.</span>
+    </li>
+    <li>
+      <span class="rules__k">Research recorder</span>
+      <span class="rules__v">Capture notes and observations locally while
+      you work a name — for research, not execution.</span>
+    </li>
+  </ul>
 </section>
 
 <!-- ── demo ─────────────────────────────────────────────────────── -->
@@ -126,7 +175,9 @@
     <figcaption class="demo__cap">
       Recorded on Kalshi's <strong>demo environment</strong>. Figures shown are
       demo results and are not indicative of live performance.
-      <a href="https://youtu.be/nlgZt3hlPxM" rel="noopener">Watch on YouTube</a>.
+      <a href="https://youtu.be/nlgZt3hlPxM" rel="noopener">Watch on YouTube</a>
+      ·
+      <a href="https://www.youtube.com/@BinaryAlpha-h8w" rel="noopener">Channel</a>.
     </figcaption>
   </figure>
 </section>
@@ -221,6 +272,8 @@
   <p class="hint">
     Not sure which Mac? <strong>Apple menu → About This Mac</strong>.
     “Apple M1–M4” is Apple Silicon; “Intel Core” is Intel.
+    All builds ship from the
+    <a href="https://github.com/binaryalpha-quant/binaryalpha-quant-binary-alpha-releases/releases" rel="noopener">releases repo</a>.
   </p>
 </section>
 
@@ -291,9 +344,11 @@ chmod +x BinaryAlphaTrader-*.AppImage
     <div class="col">
       <h3>A Kalshi account</h3>
       <p>
-        <a href="https://kalshi.com/sign-up" rel="noopener">Sign up</a>, then
+        For auto-trading:
+        <a href="https://kalshi.com/sign-up" rel="noopener">sign up</a>, then
         create API keys in your Kalshi settings. The app talks to Kalshi
-        directly from your machine.
+        directly from your machine. Discover market data does not require
+        Kalshi.
       </p>
     </div>
     <div class="col">
@@ -322,8 +377,9 @@ chmod +x BinaryAlphaTrader-*.AppImage
   <ul class="rules">
     <li>
       <span class="rules__k">Demo + dry-run</span>
-      <span class="rules__v">Both must be turned off before a real order goes
-      out. The 15-minute crypto tab has its own separate live switch.</span>
+      <span class="rules__v">Both must be turned off before a real Kalshi
+      order goes out. The 15-minute crypto tab has its own separate live
+      switch.</span>
     </li>
     <li>
       <span class="rules__k">Daily limits</span>
@@ -348,14 +404,22 @@ chmod +x BinaryAlphaTrader-*.AppImage
       <p class="footer__fine">
         Trading carries real financial risk. The bundled strategies are
         heuristics with no proven, fee-adjusted edge and may lose money.
-        Nothing here is financial advice.
+        Discover is market data and research tooling, not live memecoin
+        execution. Nothing here is financial advice.
       </p>
     </div>
-    <nav class="footer__links" aria-label="Links">
-      <a href="https://discord.gg/fN6hCxgEuK" rel="noopener">Discord</a>
-      <a href="https://github.com/binaryalpha-quant/binaryalpha-quant-binary-alpha-releases/releases" rel="noopener">All releases</a>
-      <a href="https://kalshi.com/sign-up" rel="noopener">Kalshi</a>
-    </nav>
+    <div class="footer__aside">
+      <div class="footer__actions">
+        <a class="btn btn--primary btn--compact" href="#downloads">Download</a>
+        <a class="btn btn--discord btn--compact" href="https://discord.gg/fN6hCxgEuK" rel="noopener">Join Discord</a>
+      </div>
+      <nav class="footer__links" aria-label="Links">
+        <a href="https://www.youtube.com/@BinaryAlpha-h8w" rel="noopener">YouTube</a>
+        <a href="https://github.com/binaryalpha-quant/binaryalpha-quant-binary-alpha-releases/releases" rel="noopener">All releases</a>
+        <a href="https://kalshi.com/sign-up" rel="noopener">Kalshi</a>
+        <a href="#discover">Discover</a>
+      </nav>
+    </div>
   </div>
 </footer>
 
