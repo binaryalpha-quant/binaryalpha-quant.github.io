@@ -16,8 +16,14 @@ directly, so a push to `main` is the deploy.
 index.html        markup + fallback download links
 styles.css        all styling
 app.js            platform detection, live release lookup, video facade
+tracking.js       Phase 0 marketing: UTMs + download/discord/youtube clicks
+TRACKING.md       events, params, GA4 ID setup, example ad UTMs
 media/poster.jpg  video still + og:image
 ```
+
+Marketing click/UTM instrumentation is documented in [TRACKING.md](TRACKING.md).
+Set a GA4 measurement ID via `<meta name="ba-ga4-id">` or `window.BA_GA4_ID`
+when ready; until then events still land on `dataLayer` and the console.
 
 ## The demo video
 
